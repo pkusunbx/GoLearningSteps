@@ -97,4 +97,40 @@ func main() {
 	fmt.Println("a2=", a2)
 	fmt.Println("a3=", a3)
 	fmt.Println("a4=", a4)
+
+	var a5 bool = true
+	var a6 bool = false
+	if a5 && a6 {
+		fmt.Printf("第一行 - 条件为 true\n")
+	}
+	if a5 || a6 {
+		fmt.Printf("第二行 - 条件为 true\n")
+	}
+
+	var a7 int = 4
+	var ptr *int
+	ptr = &a7
+	fmt.Println(ptr)
+	fmt.Println(*ptr)
+
+	sum := 0
+	for i := 0; i <= 10; i++ {
+		sum += i
+	}
+	fmt.Println(sum)
+
+	var a8 int = 100
+	var a9 int = 200
+	ret := max(a8, a9)
+	fmt.Printf("最大值是：%d\n", ret)
+}
+
+func max(num1, num2 int) int {
+	var result int
+	if num1 > num2 {
+		result = num1
+	} else {
+		result = num2
+	}
+	return result
 }
