@@ -10,6 +10,13 @@ var (
 	y bool
 )
 
+const zz = "const value"
+
+//不带声明格式的变量只能在函数体中出现
+//g, h := 123, "hello"
+
+var ee, ff = 123, "hello"
+
 func main() {
 	fmt.Printf("Hello" + "," + "World!\n")
 	var age = 18
@@ -47,4 +54,47 @@ func main() {
 
 	h := "ahhahaaha"
 	fmt.Println(h, x, y)
+
+	fmt.Println(ee, ff)
+
+	fmt.Println(&ee, &ff)
+
+	//cc := "ccccccc"
+
+	xx, yy := 1, 2
+	xx, yy = yy, xx
+	fmt.Println(xx, yy)
+
+	fmt.Println(zz)
+
+	const LENGTH int = 10
+	const WIDTH int = 5
+	var area int
+	area = LENGTH * WIDTH
+	fmt.Printf("面积为：%d", area)
+	fmt.Println()
+
+	const (
+		v1 = iota
+		v2
+		v3
+		v4 = "ha"
+		v5
+		v6 = 100
+		v7
+		v8 = iota
+		v9
+	)
+	fmt.Println(v1, v2, v3, v4, v5, v6, v7, v8, v9)
+
+	const (
+		a1 = 1 << iota
+		a2 = 3 << iota
+		a3
+		a4
+	)
+	fmt.Println("a1=", a1)
+	fmt.Println("a2=", a2)
+	fmt.Println("a3=", a3)
+	fmt.Println("a4=", a4)
 }
